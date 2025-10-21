@@ -37,3 +37,18 @@ public int[] subtract(int[] a, int[] b) {
 
 void main() {
 }
+// 3) Multiplikation mit einer einstelligen Zahl
+public int[] multiply(int[] a, int digit) {
+    int[] result = new int[a.length];
+    int carry = 0;
+
+    for (int i = a.length - 1; i >= 0; i--) {
+        int prod = a[i] * digit + carry;
+        result[i] = prod % 10;
+        carry = prod / 10;
+    }
+
+
+    return result;
+}
+
