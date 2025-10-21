@@ -16,3 +16,24 @@ public class aufgabe3 {
         return result;
     }
 }
+// 2) Subtraktion (a - b)
+public int[] subtract(int[] a, int[] b) {
+    int[] result = new int[a.length];
+    int borrow = 0;
+
+    for (int i = a.length - 1; i >= 0; i--) {
+        int diff = a[i] - b[i] - borrow;
+
+        if (diff < 0) {
+            diff += 10;
+            borrow = 1;
+        } else {
+            borrow = 0;
+        }
+        result[i] = diff;
+    }
+    return result;
+}
+
+void main() {
+}
