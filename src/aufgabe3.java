@@ -51,4 +51,17 @@ public int[] multiply(int[] a, int digit) {
 
     return result;
 }
+// 4) Ganzzahlige Division durch eine Ziffer
+public int[] divide(int[] a, int digit) {
+    int[] result = new int[a.length];
+    int remainder = 0;
+
+    for (int i = 0; i < a.length; i++) {
+        int current = remainder * 10 + a[i];
+        result[i] = current / digit;
+        remainder = current % digit;
+    }
+
+    return result;
+}
 
